@@ -1,0 +1,16 @@
+{
+    "name": "paulcanfield/treasure-finder",
+    "description": "Find the shortest Route to the treasure.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paul Canfield",
+            "email": "canfieldp@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9.4"
+    }
+}
