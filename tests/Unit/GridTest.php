@@ -5,9 +5,9 @@ namespace Tests\Unit;
 use Lib\Grid;
 use Lib\GridGenerator;
 use Lib\Position;
-use Tests\BaseTest;
+use Tests\BaseTestCase;
 
-class GridTest extends BaseTest
+class GridTest extends BaseTestCase
 {
     private array $staticGrid = [
         ['D', 'D', 'D', 'O', 'O'],

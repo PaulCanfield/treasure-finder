@@ -3,9 +3,9 @@
 namespace Tests\Unit;
 
 use Lib\Position;
-use Tests\BaseTest;
+use Tests\BaseTestCase;
 
-class PositionTest extends BaseTest
+class PositionTest extends BaseTestCase
 {
     /** @test */
     public function a_position_can_be_have_an_x_value() {

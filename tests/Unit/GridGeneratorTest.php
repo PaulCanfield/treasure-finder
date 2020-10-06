@@ -3,9 +3,9 @@
 namespace Tests\Unit;
 
 use Lib\GridGenerator;
-use Tests\BaseTest;
+use Tests\BaseTestCase;
 
-class GridGeneratorTest extends BaseTest
+class GridGeneratorTest extends BaseTestCase
 {
     /** @test */
     public function a_grid_generator_will_can_create_an_array() {
