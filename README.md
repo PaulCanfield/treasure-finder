@@ -5,4 +5,4 @@ Generate a 2 dimensional array, populate it with starting locations, treasures, 
   - Add PHP CS support.
   - Create Docker Image.
   - Install documentation.
-  - Make Library composer package.
+  - Reformat into composer package.
