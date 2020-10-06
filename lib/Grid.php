@@ -182,8 +182,7 @@ class Grid
      */
     private function getValidRoutes($position, $visited = [], $path = []) {
         if ($position->value == 'X') {
-            $path[] = $position;
-            $this->routes[] = $path;
+            $this->routes[] = array_merge($path, [ $position ]);
             return;
         }
 
