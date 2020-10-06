@@ -2,12 +2,13 @@
 
 namespace Lib;
 
-class Grid {
+class Grid
+{
     // Contains the map data
-    private $data;
+    private array $data;
 
     // Used for collection of valid routes.
-    private $routes = [ ];
+    private array $routes = [];
 
     // These functions are used as magic functions, they each define an offset for grid navigation.
     private $n = [-1, 0];
@@ -161,6 +162,17 @@ class Grid {
         return $this->routes;
     }
 
+    /** @test */
+    public function findShortestRoute() {
+        $shortest = null;
+        foreach ($this->findRoutes() as $index => $route) {
+            if ($shortest == null || count($shortest) > count($route)) {
+                $shortest = $route;
+            }
+        }
+        return $shortest;
+    }
+
     /**
      * Recursive function to traverse the map and find all successful routes.
      *
@@ -168,7 +180,7 @@ class Grid {
      * @param array $visited
      * @param array $path
      */
-    public function getValidRoutes($position, $visited = [], $path = []) {
+    private function getValidRoutes($position, $visited = [], $path = []) {
         if ($position->value == 'X') {
             $path[] = $position;
             $this->routes[] = $path;
