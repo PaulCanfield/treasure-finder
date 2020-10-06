@@ -13,7 +13,6 @@ class Position
      * @param $x
      * @param $y
      * @param int $value
-     * @param bool $visited
      */
     public function __construct($x, $y, $value = 0) {
         $this->x = $x;
