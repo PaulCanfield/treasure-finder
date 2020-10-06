@@ -4,22 +4,20 @@ require './vendor/autoload.php';
 
 use Lib\GridGenerator;
 use Lib\Grid;
-use Lib\Position;
 
 $grid = new Grid(GridGenerator::generateTreasureGrid());
 
 echo $grid;
 echo "\n";
 
-$grid->findRoutes($grid->starts());
-
-foreach ($grid->routes as $index => $route) {
-    foreach ($route as $index2 => $position) {
-        echo $position;
+$shortest = null;
+foreach ($grid->findRoutes() as $index => $route) {
+    if ($shortest == null || count($shortest) > count($route)) {
+        $shortest = $route;
     }
-    echo "\n";
 }
 
-
-
-
+foreach ($route as $index => $position) {
+    echo $position;
+}
+echo "\n";

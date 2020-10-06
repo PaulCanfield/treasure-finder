@@ -6,15 +6,26 @@ class Position {
     public $x;
     public $y;
     public $value;
-    public $visited;
 
-    public function __construct($x, $y, $value = 0, $visited = false) {
+    /**
+     * Position constructor.
+     * @param $x
+     * @param $y
+     * @param int $value
+     * @param bool $visited
+     */
+    public function __construct($x, $y, $value = 0) {
         $this->x = $x;
         $this->y = $y;
         $this->value = $value;
-        $this->visited = $visited;
     }
 
+    /**
+     * Example Output:
+     * (2, 1)
+     *
+     * @return string
+     */
     public function __toString() {
         return sprintf('(%s, %s)', $this->x, $this->y);
     }
