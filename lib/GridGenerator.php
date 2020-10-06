@@ -2,13 +2,19 @@
 
 namespace Lib;
 
-class GridGenerator {
+class GridGenerator
+{
     // The default number of instances for various objects in map.
-    static $defaultOptions = [
+    public static array $defaultOptions = [
         'S' => 3,
         'X' => 2,
         'D' => 8
     ];
+
+    public static string $openSpace = 'O';
+
+    public static int $defaultX = 5;
+    public static int $defaultY = 5;
 
     /**
      * Create an array map and seed it with objects in accordance with the default options.
@@ -18,8 +24,11 @@ class GridGenerator {
      * @param null $options for overriding the default options.
      * @return array multi-dimensional array seeded according to options.
      */
-    static public function generateTreasureGrid($x = 5, $y = 5, $options = null) {
-        $grid = array_fill(0, $x, array_fill(0, $y, 'O'));
+    static public function generateTreasureGrid($x = null, $y = null, $options = null) {
+        $x = $x ?: static::$defaultX;
+        $y = $y ?: static::$defaultY;
+
+        $grid = array_fill(0, $x, array_fill(0, $y, static::$openSpace));
 
         foreach ($options ?: static::$defaultOptions as $item => $occurrences) {
             while ($occurrences > 0) {
@@ -41,7 +50,7 @@ class GridGenerator {
         $x = array_rand($grid);
         $y = array_rand($grid[0]);
 
-        if ($grid[$x][$y] == 'O') {
+        if ($grid[$x][$y] == static::$openSpace) {
             $grid[$x][$y] = $item;
         } else {
             $grid = static::placeItem($grid, $item);

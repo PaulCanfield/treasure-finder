@@ -2,7 +2,8 @@
 
 namespace Lib;
 
-class Position {
+class Position
+{
     public $x;
     public $y;
     public $value;
